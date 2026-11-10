@@ -12,15 +12,17 @@
     form { display: flex; flex-direction: column; gap: 12px; height: 100%; padding: 20px; }
     h1 { margin: 0; font-size: 16px; font-weight: 600; }
     p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
-    input { width: 100%; height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--text); font: 13px monospace; }
+    input { flex-shrink: 0; width: 100%; height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--text); font: 13px monospace; }
     .buttons { display: flex; align-items: center; gap: 8px; margin-top: auto; }
     .gap { flex: 1; }
     button { height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--text); font: 13px system-ui, sans-serif; cursor: pointer; }
     button.save { border-color: var(--accent); background: var(--accent); color: white; }
     button.quiet { padding: 0; border: none; color: var(--muted); font-size: 12px; text-decoration: underline; }
+    .problem { color: #c5221f; }
+    :root.dark .problem { color: #f28b82; }
     [hidden] { display: none !important; }
   </style>
-  <script type="module" crossorigin src="/app-next/assets/agentFrame-Pk8ynQvk.js"></script>
+  <script type="module" crossorigin src="/app-next/assets/agentFrame-CQe3wCnv.js"></script>
   <link rel="modulepreload" crossorigin href="/app-next/assets/modulepreload-polyfill-B5Qt9EMX.js">
 </head>
 <body hidden>
@@ -28,6 +30,7 @@
     <h1 id="title"></h1>
     <p id="hint"></p>
     <input id="key" type="password" autocomplete="off" spellcheck="false" aria-labelledby="title">
+    <p id="problem" class="problem" role="alert" hidden></p>
     <div class="buttons">
       <button type="button" class="quiet" id="forget"></button>
       <span class="gap"></span>
